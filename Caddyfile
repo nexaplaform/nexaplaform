@@ -21,7 +21,7 @@
   respond /health 200
 
   # Sirve el build Angular desde /app/browser
-  root * /app/browser
+  root * /app/dist/nexaplaform
 
   encode gzip
   file_server
