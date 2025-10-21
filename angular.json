@@ -27,10 +27,19 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              { "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "leaflet/"
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "chartist/dist/index.css",
+              "ngx-bootstrap/datepicker/bs-datepicker.css",
+              "slick-carousel/slick/slick.css",
+              "slick-carousel/slick/slick-theme.css",
+              "leaflet/dist/leaflet.css"
             ]
           },
           "configurations": {

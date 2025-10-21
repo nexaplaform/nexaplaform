@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* Usa @use (o @import) SIN .css porque el paquete exporta el alias */
+@use '@ctrl/ngx-emoji-mart/picker';
+@use 'ngx-toastr/toastr';
+@use 'ngx-toastr/toastr-old';
+
+/* tus estilos globales debajo… */
+
