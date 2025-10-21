@@ -21,7 +21,7 @@
   respond /health 200
 
   # Sirve el build Angular desde /app/browser
-  root * /app/browser/browser
+  root * /app/browser
 
   encode gzip
   file_server
