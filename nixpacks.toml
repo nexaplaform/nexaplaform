@@ -1,25 +1,42 @@
-# https://nixpacks.com/docs/configuration/file
+# ================================
+# 🚀 Nixpacks config for Angular + Caddy on Railway
+# ================================
 
-# set up some variables to minimize annoyance
+# ✅ Variables de entorno globales
 [variables]
-    NPM_CONFIG_UPDATE_NOTIFIER = 'false' # the update notification is relatively useless in a production environment
-    NPM_CONFIG_FUND = 'false' # the fund notification is also pretty useless in a production environment
+  NPM_CONFIG_UPDATE_NOTIFIER = 'false'
+  NPM_CONFIG_FUND = 'false'
 
-# setup phase where we add any needed packages
+# ================================
+# 🛠️ Fase de instalación inicial
+# ================================
 [phases.setup]
-    nixPkgs = ['...', 'jq'] # jq is needed to parse the outputPath from our angular.json file
+  nixPkgs = ['nodejs_22', 'jq'] # Node y jq (para parsear angular.json si fuera necesario)
 
-# download caddy from nix
+# ================================
+# 📦 Instalar Caddy
+# ================================
 [phases.caddy]
-    dependsOn = ['setup'] # make sure this phase runs after the default 'setup' phase
-    nixpkgsArchive = 'ba913eda2df8eb72147259189d55932012df6301' # Caddy v2.8.4 - https://github.com/NixOS/nixpkgs/commit/ba913eda2df8eb72147259189d55932012df6301
-    nixPkgs = ['caddy'] # install caddy as a nix package
+  dependsOn = ['setup']
+  nixPkgs = ['caddy'] # Instala Caddy
+  nixpkgsArchive = 'ba913eda2df8eb72147259189d55932012df6301' # Caddy 2.8.4 estable
 
-# format the Caddyfile with fmt
+# ================================
+# 🧹 Formatear el Caddyfile
+# ================================
 [phases.fmt]
-    dependsOn = ['caddy'] # make sure this phase runs after the 'caddy' phase so that we know we have caddy downloaded
-    cmds = ['caddy fmt --overwrite Caddyfile'] # format the Caddyfile to fix any formatting inconsistencies
+  dependsOn = ['caddy']
+  cmds = ['caddy fmt --overwrite Caddyfile']
 
-# compute the output path and start the caddy web server
+# ================================
+# 🏗️ Build Angular
+# ================================
+[phases.build]
+  cmds = ['npm ci', 'npm run build'] # Usa tu script con output a /browser
+
+# ================================
+# 🚦 Start Caddy server
+# ================================
 [start]
-    cmd = 'export ANGULAR_OUTPUT_PATH=$(jq -r "[.projects[] | .architect.build.options.outputPath][0]" angular.json) && exec caddy run --config Caddyfile --adapter caddyfile 2>&1' # load the contents of the output file into a variable and start caddy using the Caddyfile config and caddyfile adapter
+  # Ejecuta Caddy sirviendo los archivos de /app/browser (output del build Angular)
+  cmd = 'exec caddy run --config Caddyfile --adapter caddyfile 2>&1'
