@@ -3,6 +3,8 @@
 # Compiled output
 dist/
 browser/
+dist/
+/browser/
 /dist
 /tmp
 /out-tsc
