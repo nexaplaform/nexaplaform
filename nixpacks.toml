@@ -34,6 +34,10 @@
 [phases.build]
   cmds = ['npm ci', 'npm run build'] # Usa tu script con output a /browser
 
+[phases.verify]
+dependsOn = ['build']
+cmds = ['ls -la /app', 'ls -la /app/browser || true']
+
 # ================================
 # 🚦 Start Caddy server
 # ================================
