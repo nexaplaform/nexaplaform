@@ -36,7 +36,8 @@
 
 [phases.verify]
 dependsOn = ['build']
-cmds = ['ls -la /app', 'ls -la /app || true']
+cmds = ['ls -la /app', 'ls -la /app/browser || true']
+
 
 # ================================
 # 🚦 Start Caddy server
