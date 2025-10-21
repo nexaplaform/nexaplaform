@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "browser",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -44,6 +45,7 @@
           },
           "configurations": {
             "production": {
+              "outputPath": "browser",
               "budgets": [
                 {
                   "type": "initial",
