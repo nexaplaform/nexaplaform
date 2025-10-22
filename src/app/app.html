@@ -34,12 +34,30 @@
             </ul>
           </li>
           <li><a href="#contact">Contact</a></li>
+
+          <!--  Selector de idioma (solo móvil, dentro del menú) -->
+          <li class="dropdown d-md-none mt-2">
+            <a href="#" (click)="$event.preventDefault()">
+              <span>{{ 'LANG.LABEL' | translate }}: {{ ('LANG.' + lang()) | translate }}</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+            <ul>
+              <li *ngFor="let l of langs">
+                <a href="#" (click)="$event.preventDefault(); setLang(l); closeMobileMenu();">
+                  <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
+                  <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
+                  {{ ('LANG.' + l) | translate }}
+                  <i *ngIf="l === lang()" class="bi bi-check ms-2"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <!-- Selector de idioma (compacto) -->
-     <!-- Selector de idioma (dropdown Bootstrap) -->
+
       <div class="dropdown d-none d-md-block ms-3">
         <button
           class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center"

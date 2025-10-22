@@ -52,10 +52,15 @@ export class App {
   }
 
   public onLangChange(event: Event) {
-  const target = event.target as HTMLSelectElement | null;
-  const value = target?.value as Lang | undefined;
-  if (value) this.setLang(value);
+    const target = event.target as HTMLSelectElement | null;
+    const value = target?.value as Lang | undefined;
+    if (value) this.setLang(value);
   }
+
+  public closeMobileMenu() {
+    (document.querySelector('.mobile-nav-toggle') as HTMLElement)?.click();
+  }
+
 
 
 }
