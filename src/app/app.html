@@ -38,7 +38,7 @@
           <!--  Selector de idioma (solo móvil, dentro del menú) -->
           <li class="dropdown d-md-none mt-2">
             <a href="#" (click)="$event.preventDefault()">
-              <span>{{ 'LANG.LABEL' | translate }}: {{ ('LANG.' + lang()) | translate }}</span>
+              <span> {{ ('lang()) | translate }}</span>
               <i class="bi bi-chevron-down toggle-dropdown"></i>
             </a>
             <ul>
@@ -46,7 +46,6 @@
                 <a href="#" (click)="$event.preventDefault(); setLang(l); closeMobileMenu();">
                   <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
                   <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
-                  {{ ('LANG.' + l) | translate }}
                   <i *ngIf="l === lang()" class="bi bi-check ms-2"></i>
                 </a>
               </li>
