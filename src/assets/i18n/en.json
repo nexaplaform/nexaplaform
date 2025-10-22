@@ -1,0 +1,35 @@
+{
+  "GLOBAL": {
+    "SITENAME": "NEXAPLATFORM"
+  },
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "SERVICES": "Services",
+    "PORTFOLIO": "Portfolio",
+    "TEAM": "Team",
+    "PRICING": "Pricing",
+    "BLOG": "Blog",
+    "DROPDOWN": "Dropdown",
+    "CONTACT": "Contact",
+    "GET_STARTED": "Get Started"
+  },
+  "HERO": {
+    "TITLE": "The Best Investment For Your Future",
+    "SUB": "Become one of the shareholders and turn your future around",
+    "GET_STARTED": "Get Started",
+    "WATCH_VIDEO": "Watch Video",
+    "HERO_IMG_ALT": "Hero illustration"
+  },
+  "ABOUT": {
+    "TITLE": "ABOUT THE PROJECT",
+    "INTRO": "A real and different project is not a promise of a future ecosystem — it’s a tangible one, already built and evolving."
+  },
+  "COMMON": {
+    "READ_MORE": "Read More",
+    "LOADING": "Loading",
+    "SENT": "Your message has been sent. Thank you!",
+    "SUBSCRIBE": "Subscribe",
+    "EMAIL_PLACEHOLDER": "Email address..."
+  }
+}

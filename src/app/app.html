@@ -9,7 +9,7 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#hero" class="active">{{ 'NAV.HOME' | translate }}</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -38,7 +38,35 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
+      <!-- Selector de idioma (compacto) -->
+     <!-- Selector de idioma (dropdown Bootstrap) -->
+      <div class="dropdown d-none d-md-block ms-3">
+        <button
+          class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center"
+          type="button"
+          id="langMenu"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-translate me-2"></i>
+          <span class="me-1">{{ ('LANG.' + lang()) | translate }}</span>
+        </button>
+
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
+          <li *ngFor="let l of langs">
+            <button
+              type="button"
+              class="dropdown-item d-flex align-items-center"
+              (click)="setLang(l)"
+            >
+              <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
+              <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
+              <span>{{ (l) | translate }}</span>
+              <i *ngIf="l === lang()" class="bi bi-check ms-auto"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
 
     </div>
   </header>
@@ -47,7 +75,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">

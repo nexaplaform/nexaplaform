@@ -3575,3 +3575,21 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+
+/* app.css */
+.header .input-group-text,
+.header .form-select.form-select-sm {
+  background-color: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.header .form-select.form-select-sm:focus {
+  box-shadow: none;
+  border-color: rgba(255,255,255,0.35);
+}
+
+.header .form-select.form-select-sm option {
+  color: #000; /* las opciones del menú desplegable suelen ir sobre fondo claro */
+}

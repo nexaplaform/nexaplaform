@@ -1,0 +1,35 @@
+{
+  "GLOBAL": {
+    "SITENAME": "NEXAPLATFORM"
+  },
+  "NAV": {
+    "HOME": "Inicio",
+    "ABOUT": "Sobre nosotros",
+    "SERVICES": "Servicios",
+    "PORTFOLIO": "Portafolio",
+    "TEAM": "Equipo",
+    "PRICING": "Precios",
+    "BLOG": "Blog",
+    "DROPDOWN": "Menú",
+    "CONTACT": "Contacto",
+    "GET_STARTED": "Empezar"
+  },
+  "HERO": {
+    "TITLE": "La mejor inversión para tu futuro",
+    "SUB": "Conviértete en accionista y cambia tu futuro",
+    "GET_STARTED": "Empezar",
+    "WATCH_VIDEO": "Ver video",
+    "HERO_IMG_ALT": "Ilustración del hero"
+  },
+  "ABOUT": {
+    "TITLE": "SOBRE EL PROYECTO",
+    "INTRO": "Un proyecto real y diferente no es una promesa de un ecosistema futuro: es uno tangible, ya construido y en evolución."
+  },
+  "COMMON": {
+    "READ_MORE": "Leer más",
+    "LOADING": "Cargando",
+    "SENT": "Tu mensaje ha sido enviado. ¡Gracias!",
+    "SUBSCRIBE": "Suscribirse",
+    "EMAIL_PLACEHOLDER": "Correo electrónico…"
+  }
+}
