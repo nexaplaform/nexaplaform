@@ -3578,18 +3578,55 @@ section,
 
 
 /* app.css */
-.header .input-group-text,
-.header .form-select.form-select-sm {
-  background-color: rgba(255,255,255,0.08);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.2);
+/* Paleta rápida (ajústala si quieres) */
+:root {
+  --header-bg: #3a5578;   /* azul del header */
+  --header-fg: #ffffff;   /* texto claro */
+  --accent:    #67d3ff;   /* cian/acento activo */
+  --muted:     rgba(255,255,255,0.65);
+  --surface:   rgba(0,0,0,0.75);
 }
 
-.header .form-select.form-select-sm:focus {
-  box-shadow: none;
+/* Botón del selector (coherente con header) */
+.btn-lang {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--header-fg);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+}
+.btn-lang:hover,
+.btn-lang:focus {
+  background-color: rgba(255,255,255,0.18);
+  color: #fff;
   border-color: rgba(255,255,255,0.35);
 }
+.btn-lang .lang-code { letter-spacing: .03em; opacity: .9; }
 
-.header .form-select.form-select-sm option {
-  color: #000; /* las opciones del menú desplegable suelen ir sobre fondo claro */
+/* Dropdown compacto y oscuro */
+.lang-dropdown {
+  min-width: auto !important;
+  width: auto !important;
+  padding: .25rem .35rem !important;
+  background-color: var(--surface);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: .5rem;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+/* Items */
+.lang-dropdown .dropdown-item {
+  color: var(--header-fg);
+  padding: .35rem .5rem !important;
+  border-radius: .35rem;
+}
+.lang-dropdown .dropdown-item:hover {
+  background-color: rgba(255,255,255,0.08);
+}
+
+/* Ítem activo = acento del sitio */
+.lang-dropdown .dropdown-item.active,
+.lang-dropdown .dropdown-item.active:hover {
+  background-color: var(--accent) !important;
+  color: #072a3a !important; /* contraste sobre cian */
 }

@@ -35,18 +35,27 @@
           </li>
           <li><a href="#contact">Contact</a></li>
 
-          <!--  Selector de idioma (solo móvil, dentro del menú) -->
+
           <li class="dropdown d-md-none mt-2">
             <a href="#" (click)="$event.preventDefault()">
-              <span> Languaje :{{ (lang()) | translate }}</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
+              <span>
+                {{ flags[lang()] }}
+                <span class="text-uppercase ms-1">{{ lang() }}</span>
+              </span>
+              <i class="bi bi-chevron-down toggle-dropdown ms-1"></i>
             </a>
+
             <ul>
               <li *ngFor="let l of langs">
-                <a href="#" (click)="$event.preventDefault(); setLang(l); closeMobileMenu();">
-                  <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
-                  <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
-                  <i *ngIf="l === lang()" class="bi bi-check ms-2"></i>
+                <a
+                  href="#"
+                  (click)="$event.preventDefault(); setLang(l); closeMobileMenu();"
+                  [class.active]="l === lang()"
+                  class="d-flex align-items-center py-1 px-2"
+                >
+                  <span class="me-2">{{ flags[l] }}</span>
+                  <span class="text-uppercase">{{ l }}</span>
+                  <i *ngIf="l === lang()" class="bi bi-check ms-auto"></i>
                 </a>
               </li>
             </ul>
@@ -56,32 +65,37 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-
       <div class="dropdown d-none d-md-block ms-3">
         <button
-          class="btn btn-outline-secondary btn-sm dropdown-toggle d-flex align-items-center"
+          class="btn btn-lang btn-sm dropdown-toggle d-flex align-items-center"
           type="button"
           id="langMenu"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
           <i class="bi bi-translate me-2"></i>
-          <span class="me-1">{{ (lang()) | translate }}</span>
+          <span class="me-1">{{ flags[lang()] }}</span>
+          <span class="lang-code text-uppercase">{{ lang() }}</span>
         </button>
 
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langMenu">
+        <ul class="dropdown-menu dropdown-menu-end lang-dropdown" aria-labelledby="langMenu">
           <li *ngFor="let l of langs">
             <button
               type="button"
               class="dropdown-item d-flex align-items-center"
-              (click)="setLang(l)">
-              <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
-              <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
+              [class.active]="l === lang()"
+              (click)="setLang(l)"
+            >
+              <span class="me-2">{{ flags[l] }}</span>
+              <span class="text-uppercase">{{ l }}</span>
               <i *ngIf="l === lang()" class="bi bi-check ms-auto"></i>
             </button>
           </li>
         </ul>
       </div>
+
+
+
 
     </div>
   </header>

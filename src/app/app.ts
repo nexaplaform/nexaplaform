@@ -11,7 +11,7 @@ const LANGS: readonly Lang[] = ['en', 'es'] as const;
 
 function toLang(v?: string | null): Lang | null {
   if (!v) return null;
-  const base = v.split('-')[0]; // "en-US" -> "en"
+  const base = v.split('-')[0];
   return (base === 'en' || base === 'es') ? (base as Lang) : null;
 }
 
@@ -30,6 +30,11 @@ export class App {
 
   langs: readonly Lang[] = LANGS;
   lang = signal<Lang>('en');
+
+   flags: Record<Lang, string> = {
+    en: '🇺🇸',
+    es: '🇪🇸',
+  };
 
   constructor() {
     this.translate.addLangs(this.langs as unknown as string[]);
