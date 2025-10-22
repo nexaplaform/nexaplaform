@@ -75,11 +75,9 @@
             <button
               type="button"
               class="dropdown-item d-flex align-items-center"
-              (click)="setLang(l)"
-            >
+              (click)="setLang(l)">
               <span class="me-2" *ngIf="l === 'en'">🇺🇸</span>
               <span class="me-2" *ngIf="l === 'es'">🇪🇸</span>
-              <span>{{ (l) | translate }}</span>
               <i *ngIf="l === lang()" class="bi bi-check ms-auto"></i>
             </button>
           </li>
