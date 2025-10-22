@@ -5,11 +5,7 @@
   "projects": {
     "nexaplaform": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,31 +13,22 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "browser",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              { "glob": "**/*",
-                "input": "node_modules/leaflet/dist/images",
-                "output": "leaflet/"
               }
             ],
             "styles": [
-              "src/styles.scss",
-              "chartist/dist/index.css",
-              "ngx-bootstrap/datepicker/bs-datepicker.css",
-              "slick-carousel/slick/slick.css",
-              "slick-carousel/slick/slick-theme.css",
-              "leaflet/dist/leaflet.css"
-            ]
+              "src/styles.css"
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -86,12 +73,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
@@ -99,11 +81,14 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "258fdbe1-8a53-4de1-946b-eca691aab018"
   }
 }

@@ -1,7 +1,0 @@
-/* Usa @use (o @import) SIN .css porque el paquete exporta el alias */
-@use '@ctrl/ngx-emoji-mart/picker';
-@use 'ngx-toastr/toastr';
-@use 'ngx-toastr/toastr-old';
-
-/* tus estilos globales debajo… */
-
