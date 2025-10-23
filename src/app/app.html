@@ -10,30 +10,13 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">{{ 'NAV.HOME' | translate }}</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">{{ 'NAV.ABOUT' | translate }}</a></li>
+          <li><a href="#services">{{ 'NAV.SERVICES' | translate }} </a></li>
+          <li><a href="#portfolio">{{ 'NAV.PORTFOLIO' | translate }}</a></li>
+          <li><a href="#team">{{ 'NAV.TEAM' | translate }}</a></li>
+          <li><a href="#pricing">{{ 'NAV.PRICING' | translate }}</a></li>
+          <li><a href="blog.html">{{ 'NAV.BLOG' | translate }}</a></li>
+          <li><a href="#contact">{{ 'NAV.CONTACT' | translate }}</a></li>
 
 
           <li class="dropdown d-md-none mt-2">
@@ -107,11 +90,11 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>The Best Investment For Your Future</h1>
-            <p>Become one of the shareholders and turn your future around</p>
+            <h1>{{ 'HERO.TITLE' | translate }}</h1>
+            <p>{{ 'HERO.SUB' | translate }}</p>
             <div class="d-flex">
-              <a href="#about" class="btn-get-started">Get Started</a>
-              <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="#about" class="btn-get-started">{{ 'HERO.GET_STARTED' | translate}}</a>
+              <a href="#" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>{{ 'HERO.WATCH_VIDEO' | translate}}</span></a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
